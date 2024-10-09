@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Registration Form</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="text-center">
+        <!-- Replace 'path_to_logo.png' with the actual path to your logo image -->
+        <img src="https://res.cloudinary.com/djqezfb12/image/upload/v1728125962/Screenshot_2024-10-05_162820-removebg-preview_1_ysojj0.png" alt="Logo" class="img-fluid" style="max-width: 200px; margin-bottom: 20px;">
+    </div>
+    
+    <h1 class="text-center p-2">Enrollment Form</h1>
+    <hr style="border:2px solid orange; width:20%;" />
+    <br/>
+    <form name="submit-to-google-sheet" >
+        <label for="candidateName" >Candidate Name:</label>
+        <input type="text" id="candidateName" name="candidate_name" placeholder="Candidate Name" required>
+
+        <label for="fathersName">Father's Name:</label>
+        <input type="text" id="fathersName" name="father_name" placeholder="Father's Name" required>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" placeholder="Gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="dob">Date of Birth:</label>
+        <input style="font-family:Poppins;" type="date" id="dob" name="date_of_birth" required >
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" style="font-family:Poppins;" id="phone" name="phone" placeholder="Phone Number" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+
+        <label for="qualification">Qualification:</label>
+        <input type="text" id="qualification" name="qualification" placeholder="Qualification"  required>
+
+        <label for="yearPassedOut">Year of Passed Out:</label>
+        <input type="number" style="font-family:Poppins;" id="yearPassedOut" name="year_of_passing" placeholder="Year of Passing" required>
+
+        <label for="interestedTechnology">Interested Technology:</label>
+        <select id="interestedTechnology" name="interested_technology" placeholder="Interested Technology" required>
+            <option value="">Select</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="devops">DevOps</option>
+            <option value="digitalMarketing">Digital Marketing</option>
+        </select>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" placeholder="Address" required></textarea>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" placeholder="City" required>
+
+       <p class="pt-3"> <label>Note : </label> send your resume to this mail <span style="font-weight:bold;">vipastraininginstitute@gmail.com</span></p> 
+
+       
+
+        <button type="submit" class="mt-3">Submit</button>
+    </form>
+
+    <!-- <script>
+        let exampleInputEmail1E1 = document.getElementById("exampleInputEmail1");
+        let exampleInputPassword1E1 = document.getElementById("exampleInputPassword1");
+        let exampleInputPhoneE1 = document.getElementById("exampleInputPhone"); // Phone element
+        let exampleMessageE1 = document.getElementById("exampleMessage"); // Message element
+        
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxD7wPSa1o23gM0Q3AlDiHZCnERGp762UBqEBppmTAbkES-YUtJDvs_5PecnUiV-aLwSQ/exec'; // Replace with your deployed web app URL
+        const form = document.forms['submit-to-google-sheet'];
+    
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+    
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => response.json())
+                .then(result => {
+                    console.log('Success!', result);
+                    // alert('Successfully registered'); // Show the alert
+                    form.reset(); // Reset the form fields
+                    window.location.href = 'message.html';
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                });
+        });
+    </script> -->
+
+
+    <script>
+        // Get input elements
+        let exampleInputEmail1E1 = document.getElementById("exampleInputEmail1");
+        let exampleInputPassword1E1 = document.getElementById("exampleInputPassword1"); // If you need this field, ensure it's in the HTML
+        let exampleInputPhoneE1 = document.getElementById("exampleInputPhone"); // Phone element
+        let exampleMessageE1 = document.getElementById("exampleMessage"); // Message element
+        let candidateNameE1 = document.getElementById("candidateName");
+        let fatherNameE1 = document.getElementById("fatherName");
+        let genderE1 = document.getElementById("gender");
+        let dateOfBirthE1 = document.getElementById("dateOfBirth");
+        let qualificationE1 = document.getElementById("qualification");
+        let yearOfPassingE1 = document.getElementById("yearOfPassing");
+        let interestedTechnologyE1 = document.getElementById("interestedTechnology");
+        let addressE1 = document.getElementById("address");
+        let cityE1 = document.getElementById("city");
+    
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxLxQ9UEZazqhGnSAVSGY2P4Z1uOYZiDHxN3eFXcWa38ptCbpzBLqubZdG-55jpNhl-/exec'; // Replace with your deployed web app URL
+        const form = document.forms['submit-to-google-sheet'];
+    
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+    
+            // Create FormData object with all form fields
+            const formData = new FormData(form);
+    
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => response.json())
+                .then(result => {
+                    console.log('Success!', result);
+                    alert('Successfully registered'); // Show the alert
+                    form.reset(); // Reset the form fields
+                    window.location.href = 'a.html';
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                });
+        });
+    </script>
+    
+
+
+</body>
+</html>
